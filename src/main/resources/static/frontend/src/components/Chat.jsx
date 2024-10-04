@@ -6,20 +6,27 @@ export function Chat(){
         <div className="rightside" style={
             {
                 width: '100%', 
-                height: '100vh'
+                height: '100vh',
+                display: 'flex',
+                flexDirection: 'column',
+                overflow: 'hidden'
+                
+                
             }
             }>
             
-            <div className="panel" style={
+            
+            <div className="panel" style={// painel onde as mensagens serão renderizadas
                 {
-                    height: '96vh'
+                    flex: 1, // Faz com que o painel ocupe o restante do espaço
+                    overflowY: 'auto', // Apenas o painel tem rolagem
+                    padding: '10px'
                 }
-            }>
-                <p>msg</p>
+                }>
             </div>
 
             <div className="chatInput">
-                <input type="text" placeholder="Mensagem" style={{ height: 30, width:'70%' }}/>
+                <input type="text" placeholder="Mensagem" style={{ height: 30, width:'100%', bottom: '0%', position: 'fixed' }}/>
             </div>
         </div>
     );
